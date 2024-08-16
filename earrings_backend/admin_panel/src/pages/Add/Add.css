@@ -1,0 +1,58 @@
+.add{
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    color: #696969;
+    font-size: 16px;
+}
+
+.add form{
+    gap: 20px;
+
+}
+
+.upload  img{
+    width: 150px;
+    border: 1px solid #696969;
+    border-radius: 3px;
+    padding: 0px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.upload img:hover{
+    border: 1px solid #b7b7b7;
+}
+
+.add-name, .add-description{
+    width: max(40%, 280px);
+}
+
+.add-name input, .add-description textarea{
+    padding: 10px;
+}
+
+.add-price{
+    display: flex;
+    gap:30px;
+}
+
+.add-price input{
+    max-width: 120px;
+    padding: 10px;
+}
+
+.add-button{
+    max-width: 120px;
+    border:none;
+    padding: 10px;
+    background-color: #696969;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.add-button:hover{
+    background-color: #303030;
+}

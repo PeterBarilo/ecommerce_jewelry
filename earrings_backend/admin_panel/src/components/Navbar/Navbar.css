@@ -3,17 +3,17 @@
     justify-content:flex-start;
     align-items: center;
     padding: 15px 4%;
-    background-color: #E8B5B7;
+    background-color: #424242;
 }
 
 .navbar .logo{
     font-size: 30px;
-    color: #434343;
+    color: #E8B5B7;
 }
 
 .navbar .logotext{
     margin-left: 10px;
     font-size: 20px;
     margin-top: 7px;
-    color: #525252;
+    color: #aeaeae;
 }

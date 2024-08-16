@@ -1,0 +1,37 @@
+.format{
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: 1px solid #e2e2e2;
+    font-size: 13px;
+}
+
+.table img{
+    width:80px
+}
+
+.format.title{
+    background-color: #f9f9f9;
+}
+
+.x{
+    cursor: pointer;
+    transition: .3s;
+}
+
+.x:hover{
+    color:black;
+}
+
+@media(max-width:600px){
+    .format{
+        grid-template-columns: 1fr 3fr 1fr;
+        gap:15px;
+
+    }
+    .format.title{
+        display: none;
+    }
+}

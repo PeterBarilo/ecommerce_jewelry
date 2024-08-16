@@ -10,7 +10,7 @@
 
 body{
   min-height: 100vh;
-  background-color: #e2e2e2;
+  background-color: #f7f7f7;
 }
 
 a{
@@ -21,9 +21,15 @@ a{
 hr{
   border:none;
   height: 1px;
-  background-color: #a6a6a6;
+  background-color: #E8B5B7;
 }
 
 .content{
   display: flex;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
 }

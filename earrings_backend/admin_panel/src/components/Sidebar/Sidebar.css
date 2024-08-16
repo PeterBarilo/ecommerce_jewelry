@@ -21,12 +21,20 @@
     border: 1px solid #a6a6a6;
     border-right:0 ;
     padding: 8px 10px;
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 10px 0px 0px 10px;
     cursor: pointer;
+    color:#696969;
+    transition: .3s;
+}
+
+.option:hover{
+    border: 1px solid #E8B5B7;
+    border-right:0 ;
+
 }
 
 .options img{
-    width: 45px;
+    width: 25px;
     height: auto;
 }
 

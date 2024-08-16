@@ -22,7 +22,7 @@ const addEarring = async (req,res) =>{
 const list = async (req,res) => {
     try{
         const products = await earringModel.find({});
-        res.json({succes:true,data:products})
+        res.json({success:true,data:products})
     }catch(error){
         console.log(error)
         res.json({success:false, message:"Error"})
