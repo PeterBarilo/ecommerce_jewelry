@@ -1,0 +1,135 @@
+.bag{
+    margin-top: 100px;
+}
+
+.bag-items-title{
+    display:grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr .5fr;
+    align-items: center ;
+    color: #696969;
+    font-size: max(1vw, 12px);
+}   
+
+.bag-items-item{
+    margin:10px 0px;
+    color: black;
+}
+
+.bag-items-item img{
+    width:200px;
+}
+
+.bag hr{
+    height: 1px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.bag-items-item .x{
+    cursor: pointer;
+}
+
+.bag-bottom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: max(12vw, 20px);
+}
+
+.bag-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bag-total-details{
+    display: flex;
+    justify-content: space-between;
+    color:#696969;
+}
+
+.bag-total hr{
+    margin: 10px 0px;
+}
+
+.bag-total button{
+    border: none;
+    color: white;
+    background-color: #E8B5B7;
+    width: max(15vw, 200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bag-total button:disabled{
+    cursor: not-allowed;
+    background-color: #e2e2e2;
+    color: #696969;
+}
+
+.bag-total button:hover{
+    background-color: #e79193;
+
+}
+
+.bag-total button:hover:disabled{
+    background-color: #cecece;
+
+}
+
+.bag-promo{
+    flex: 1;
+}
+
+.bag-promo p{
+    color: #696969;
+}
+
+.bag-promo-input{
+    margin-top:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e2e2e2;
+    border-radius: 4px;
+}
+
+.bag-promo-input input{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.bag-promo-input button{
+    width: max(10vw, 150px);
+    padding: 12px 5px;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;    
+}
+
+
+.bag-promo-input button:hover{
+    background-color: #696969;
+
+}
+
+
+
+
+
+@media (max-width:750px){
+    .bag-bottom{
+        flex-direction: column-reverse;
+    }
+    .bag-promo{
+        justify-content: start;
+    }
+}

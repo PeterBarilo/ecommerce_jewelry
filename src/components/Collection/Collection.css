@@ -1,0 +1,36 @@
+.collection{
+    padding-top: 25px;
+}
+
+.collection h2{
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+}
+
+.collection-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    margin-top: 30px;
+    gap: 50px;
+    row-gap: 50px;
+}
+
+.listing{
+}
+
+.full{
+    display: flex;
+    justify-content:space-between;
+}
+
+.full h2{
+    color:#4b4b4b;
+    font-weight: 500;
+
+}
+
+.filter{
+    width: auto;
+    height: 35px; 
+}
+

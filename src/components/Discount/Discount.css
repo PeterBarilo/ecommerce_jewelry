@@ -1,0 +1,98 @@
+.discount{
+    width: 65%;
+    height: 19.48vw;
+    margin: auto;
+    background: url('/discount.jpg')  no-repeat;
+    position:relative;
+    background-size: contain;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding-left:30vw;
+    margin-top: 80px;
+}
+
+.left{
+    position: absolute;
+    display: flex;
+    flex-direction:column;
+    align-items: start;
+    max-width: 50%;
+}
+
+.left h1{
+    color: white;
+    font-size: max(3.5vw, 22px);
+    font-weight: 600;
+}
+
+.left p{
+    color: #ececec;
+    font-size: 1.3vw;
+    font-weight: 400;    
+    padding-left:4vw;
+    padding-top: .5vw;
+    padding-bottom: .2vw;
+    margin-right:33px;
+
+}
+
+.left button{
+    width: 5vw;
+    height: 2.5vw;
+    border-radius: 35px;
+    background-color: white;
+    color:#696969;
+    border: none;
+    font-size: max(1vw, 15px);
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left:4vw;
+    transition: .3s;
+
+}
+
+.left button:hover{
+    background-color: #696969;
+    color:white;
+
+}
+
+@media (max-width:1050px){
+    .discount{
+        padding-top:.5vw;
+        width:85%;
+        height: 25.28vw;
+    }
+    .left h1{
+        font-size: 4vw;
+        padding-left: 10vw;
+    }
+    .left p{
+        padding-left: 15vw;
+    }
+    .left button{
+        margin-left: 15vw;
+        width: 10vw;
+        height: 5vw;
+    }
+}
+
+@media (max-width:750px){
+    .discount{
+        padding-top:1.3vw;
+        width:85%;
+        margin-bottom: -50px;
+    }
+    .left h1{
+        font-size: 4vw;
+    }
+    .left p{
+        display: none;
+    }
+    .left button{
+        margin-left: 15vw;
+        width: 18vw;
+        height: 10vw;
+    }
+}
