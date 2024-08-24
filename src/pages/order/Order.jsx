@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Order.css'
 import { StoreContext } from '../../context/StoreContext';
 const Order = () => {
-  const {totalCol, totalFeat} = useContext(StoreContext);
+  const {totalCol} = useContext(StoreContext);
 
   return (
     <form className='order'>
@@ -31,17 +31,17 @@ const Order = () => {
           <div>
             <div className="bag-total-details">
               <p>Subtotal</p>
-              <p>${totalCol()+totalFeat()}</p>
+              <p>${totalCol()}</p>
             </div>
             <hr />
             <div className="bag-total-details">
               <p>Delivery</p>
-              <p>${(totalCol()+totalFeat())===0?0:10.99}</p>
+              <p>${(totalCol())===0?0:10.99}</p>
             </div>
             <hr />
             <div className="bag-total-details">
               <b>Total</b>
-              <b>${(totalCol()+totalFeat())===0?0:(totalCol()+totalFeat()+10.99)}</b>
+              <b>${(totalCol())===0?0:(totalCol()+10.99)}</b>
             </div>
           </div>
           <button>PAYMENT</button>

@@ -4,7 +4,7 @@ import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom';
 const Bag = () => {
 
-  const {cart, collection, featuredItems, remove, totalCol, totalFeat} = useContext(StoreContext);
+  const {cart, collection, featuredItems, remove, totalCol} = useContext(StoreContext);
   const navigate = useNavigate();
 
   return (
@@ -21,33 +21,16 @@ const Bag = () => {
         <br />
         <hr />
         {collection.map((item, index)=>{
-          if(cart[item.id]>0){
+          if(cart[item._id]>0){
             return(
               <>
-              <div key="index" className='bag-items-title bag-items-item'>
+              <div key={item._id} className='bag-items-title bag-items-item'>
                 <img className='img' src={item.image} alt="" />
                 <p>{item.name}</p>
                 <p>${item.new_price}</p>
-                <p>{cart[item.id]}</p>
-                <p>${item.new_price*cart[item.id]}</p>
-                <p onClick={()=>remove(item.id)} className='x'>x</p>
-              </div>
-              <hr />
-              </>
-            )
-          }
-        })}
-        {featuredItems.map((item, index)=>{
-          if(cart[item.id]>0){
-            return(
-              <>
-              <div key="index" className='bag-items-title bag-items-item'>
-                <img className='img' src={item.image} alt="" />
-                <p>{item.name}</p>
-                <p>${item.new_price}</p>
-                <p>{cart[item.id]}</p>
-                <p>${item.new_price*cart[item.id]}</p>
-                <p onClick={()=>remove(item.id)} className='x'>x</p>
+                <p>{cart[item._id]}</p>
+                <p>${item.new_price*cart[item._id]}</p>
+                <p onClick={()=>remove(item._id)} className='x'>x</p>
               </div>
               <hr />
               </>
@@ -61,20 +44,20 @@ const Bag = () => {
           <div>
             <div className="bag-total-details">
               <p>Subtotal</p>
-              <p>${totalCol()+totalFeat()}</p>
+              <p>${totalCol()}</p>
             </div>
             <hr />
             <div className="bag-total-details">
               <p>Delivery</p>
-              <p>${(totalCol()+totalFeat())===0?0:10.99}</p>
+              <p>${(totalCol())===0?0:10.99}</p>
             </div>
             <hr />
             <div className="bag-total-details">
               <b>Total</b>
-              <b>${(totalCol()+totalFeat())===0?0:(totalCol()+totalFeat()+10.99)}</b>
+              <b>${(totalCol())===0?0:(totalCol()+10.99)}</b>
             </div>
           </div>
-          {(totalCol()+totalFeat())===0? <button className='disabled' disabled={true} onClick={()=> navigate('/order')}>CHECKOUT</button> :<button onClick={()=> navigate('/order')}>CHECKOUT</button>}
+          {(totalCol())===0? <button className='disabled' disabled={true} onClick={()=> navigate('/order')}>CHECKOUT</button> :<button onClick={()=> navigate('/order')}>CHECKOUT</button>}
 
           
         </div>

@@ -1,12 +1,24 @@
 import { createContext, useEffect, useState } from "react";
-import { collection } from "../assets/assets";
-import { featuredItems } from "../assets/assets";
+import axios from 'axios'
 
 export const StoreContext = createContext(null)
 
-const storeContextProvider = (props) =>{
+const StoreContextProvider = (props) =>{
+    const fetchProducts = async () =>{
+        const res = await axios.get(url+'/api/earring/list')
+        setCollection(res.data.data)
+    }
+
+    useEffect(()=>{
+        async function loadData(){
+            await fetchProducts()
+        }
+        loadData()
+    },[])
 
     const [cart, setCart] = useState({});
+    const [collection,  setCollection] = useState([])
+    const url  = "http://localhost:4000"
 
     const add = (id) =>{
         if(!cart[id] ){
@@ -25,26 +37,15 @@ const storeContextProvider = (props) =>{
         let amount1 = 0;
 
         for(const item in cart){
+            console.log(cart[item])
             if (cart[item] > 0){    
-                let info1 = collection.find((product) => product.id === parseInt(item));
+                console.log(collection.find((prod) => parseInt(prod._id) === parseInt(item)))
+
+                let info1 = collection.find((prod) => parseInt(prod._id) === parseInt(item))
                 if(info1 !== undefined){
                     amount1 += info1.new_price * cart[item];
                 }
-            }
-            
-        }
-        return amount1;
-    }
 
-    const totalFeat = () =>{
-        let amount1 = 0;
-
-        for(const item in cart){
-            if (cart[item] > 0){    
-                let info1 = featuredItems.find((product) => product.id === parseInt(item));
-                if(info1 !== undefined){
-                    amount1 += info1.new_price * cart[item];
-                }
             }
             
         }
@@ -52,14 +53,13 @@ const storeContextProvider = (props) =>{
     }
 
     const contextValue = {
-        featuredItems,
         collection,
         cart,
         setCart,
         add,
         remove,
         totalCol,
-        totalFeat,
+        url,
     }
     return (
         <StoreContext.Provider value={contextValue}>
@@ -68,4 +68,4 @@ const storeContextProvider = (props) =>{
     )
 }
 
-export default storeContextProvider
+export default StoreContextProvider

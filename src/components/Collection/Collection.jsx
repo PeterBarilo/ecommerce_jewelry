@@ -15,7 +15,7 @@ const Collection = () => {
         </div>
       <div className="collection-list">
         {collection.map((item, index)=>{
-            return <Listing className='listing' key={index} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}></Listing>
+            return <Listing className='listing' key={index} id={item._id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}></Listing>
         })}
       </div>
     </div>

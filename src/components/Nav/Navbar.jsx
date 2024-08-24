@@ -7,7 +7,7 @@ import { StoreContext } from '../../context/StoreContext'
 const Navbar = () => {
     const [menu, setMenu] = useState("home");
 
-    const {totalCol, totalFeat} = useContext(StoreContext);
+    const {totalCol,} = useContext(StoreContext);
   return (
     <div className='navbar'>
         {/* ADD LOGO IMG <img src={assets.} alt="" />*/}
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="navbar-search-icon">
                     <Link to='/cart'><img className="cart_hover" src={assets.bag_hover}  alt="" /></Link>
                     <Link to='/cart'><img className="cart" src={assets.cart}  alt="" /></Link>
-                <Link to='/cart'><div className={(totalCol()+totalFeat())===0?"":"dot"}></div></Link>
+                <Link to='/cart'><div className={(totalCol())===0?"":"dot"}></div></Link>
             </div>
             <button><a href="#footer">Contact</a></button>
         </div>

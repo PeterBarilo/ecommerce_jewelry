@@ -3,10 +3,10 @@ import './Listing.css'
 import { StoreContext } from '../../context/StoreContext';
 const Listing = (props) => {
 
-    const {cart, add,remove} = useContext(StoreContext);
+    const {cart, add,remove,url} = useContext(StoreContext);
   return (
     <div className='item'>
-      <img className="image" src={props.image} alt="" />
+      <img className="image" src={url + '/images/'+ props.image} alt="" />
       <div className="info">
         <p>{props.name}</p>
         {!cart[props.id]
