@@ -3,6 +3,7 @@ import cors from "cors"
 import { connectDB } from "./config/db.js";
 import earringRouter from "./routes/earringRoute.js";
 import bagRouter from "./routes/bagRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 
 
 
@@ -21,6 +22,7 @@ connectDB();
 app.use("/api/earring", earringRouter)
 app.use("/images",express.static('uploads'))
 app.use('/api/bag', bagRouter)
+app.use('/api/order', orderRouter)
 
 app.get("/",(req, res)=>{
     res.send("API Working")
