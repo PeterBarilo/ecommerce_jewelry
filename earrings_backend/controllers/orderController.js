@@ -2,7 +2,7 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
-const stripe  = new Stripe("STRIPE SECRET ID OMITTED")
+const stripe  = new Stripe("ADD SECRET KEY")
 
 const placeOrder = async (req,res) =>{
     const url_frontend = 'http://localhost:5173'
@@ -70,4 +70,24 @@ const verify = async (req,res) =>{
     }
 }
 
-export {placeOrder, verify}
+const orderList = async (req,res)=>{
+    try {
+        const orders = await orderModel.find({})
+        res.json({success:true,data:orders})
+    } catch (error) {
+        console.log(error)
+        res.json({success:false,message:"Error"})
+    }
+}
+
+const status = async (req,res)=>{
+    try {
+        await orderModel.findByIdAndUpdate(req.body.orderId,{status:req.body.status})
+        res.json({success:true, message:"Status has been Updated"})
+    } catch (error) {
+        console.log(error)
+        res.json({success:false,message:"Error Updating Status"})
+    }
+}
+
+export {placeOrder, verify, orderList,status}

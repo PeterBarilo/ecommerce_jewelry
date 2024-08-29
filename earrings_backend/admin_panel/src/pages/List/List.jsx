@@ -48,7 +48,7 @@ const List = ({url}) => {
                   <p>{item.name}</p>
                   <p>${item.new_price}</p>
                   <p>${item.old_price}</p>
-                  <p onClick={()=>remove(item._id)} className='x'>x</p>
+                  <p onClick={()=>remove(item._id)} className='x'>X</p>
               </div>
             )
         })}

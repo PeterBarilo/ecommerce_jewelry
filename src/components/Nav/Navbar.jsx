@@ -12,9 +12,9 @@ const Navbar = () => {
     <div className='navbar'>
         {/* ADD LOGO IMG <img src={assets.} alt="" />*/}
         <ul className="navbar-menu">
-            <Link to='/' onClick={() => setMenu("home")} className={menu==="home"?"active":""}>Home</Link>
-            <a href='#featured' onClick={() => setMenu("featured")}className={menu==="featured"?"active":""}>Featured</a>
-            <a href='#collection'onClick={() => setMenu("collection")}className={menu==="collection"?"active":""}>Collection</a>
+            <Link to='/' onClick={() => setMenu("home")} className={menu==="home"?"active":"la"}>Home</Link>
+            <a href='#featured' onClick={() => setMenu("featured")}className={menu==="featured"?"active":"la"}>Featured</a>
+            <a href='#collection'onClick={() => setMenu("collection")}className={menu==="collection"?"active":"la"}>Collection</a>
         </ul>
 
         <h2 className='title'><Link to="/">ColorSplash</Link></h2>

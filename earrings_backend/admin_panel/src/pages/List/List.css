@@ -4,13 +4,17 @@
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    border: 1px solid #e2e2e2;
+    border: 1px solid #696969;
+    border-radius: 15px;
     font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .table img{
     width:80px
 }
+
+
 
 .format.title{
     background-color: #f9f9f9;
@@ -18,11 +22,14 @@
 
 .x{
     cursor: pointer;
+    font-size: 15px;
     transition: .3s;
 }
 
 .x:hover{
     color:black;
+    font-size: 25px;
+
 }
 
 @media(max-width:600px){

@@ -1,0 +1,71 @@
+.item{
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid #696969;
+    border-radius: 15px;
+    padding:20px;
+    margin: 30px 0px;
+    font-size: 14px;
+    color: #696969;
+}
+
+.earring{
+    font-weight: 600;
+
+}
+
+.order img{
+    height:50px;
+}
+
+.date{
+    margin-top: 5px;
+}
+
+.del{
+    color: green;
+}
+
+
+.order option{
+    color:#696969;
+    cursor: pointer;
+}
+.order select{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.name{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.addy{
+    margin-bottom: 10px;
+}
+
+.item select{
+    background-color: #e2e2e2;
+    border: 1px solid #696969;
+    width: max(10vw, 120px);
+    padding: 10px 3px;
+    border-radius: 10px;
+    outline: none;
+
+}
+
+@media(max-width:1000px){
+    .item{
+        font-size:12px;
+        grid-template-columns: .5fr 2fr 1fr;
+        padding: 15px 8px;
+
+    }
+    .item select{
+        padding: 5px;
+        font-size: 12px;
+    }
+ }
